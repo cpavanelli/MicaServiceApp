@@ -30,12 +30,9 @@ namespace MicaWCF
                 if (restaurante.ID == 0)
                     db.Restaurantes.Add(restaurante);
                 else
-                {
                     db.Entry(restaurante).State = EntityState.Modified;
-                    db.SaveChanges();
-                }
 
-
+                db.SaveChanges();
                 return restaurante.ID.ToString();
             }
             catch (Exception ex)
