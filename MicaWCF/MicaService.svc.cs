@@ -48,6 +48,7 @@ namespace MicaWCF
         {
             var r = db.Restaurantes.Find(restaurante.ID);
             db.Restaurantes.Remove(r);
+            db.SaveChanges();
             return true;
         }
 
