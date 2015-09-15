@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Evento">
           <Key>
             <PropertyRef Name="ID" />
@@ -15,9 +15,11 @@
           <Property Name="Fim" Type="datetime" />
           <Property Name="Link" Type="varchar" MaxLength="100" />
           <Property Name="Localizacao" Type="varchar" MaxLength="100" />
-          <Property Name="Nota" Type="int" />
-          <Property Name="Visto1" Type="bit" />
-          <Property Name="Visto2" Type="bit" />
+          <Property Name="Nota" Type="int" Nullable="false" />
+          <Property Name="Visto1" Type="bit" Nullable="false" />
+          <Property Name="Visto2" Type="bit" Nullable="false" />
+          <Property Name="Registrado" Type="datetime" />
+          <Property Name="VistoEm" Type="datetime" />
         </EntityType>
         <EntityType Name="Media">
           <Key>
@@ -26,9 +28,11 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nome" Type="varchar" MaxLength="100" />
           <Property Name="Tipo" Type="varchar" MaxLength="100" />
-          <Property Name="Nota" Type="int" />
-          <Property Name="Visto1" Type="bit" />
-          <Property Name="Visto2" Type="bit" />
+          <Property Name="Nota" Type="int" Nullable="false" />
+          <Property Name="Visto1" Type="bit" Nullable="false" />
+          <Property Name="Visto2" Type="bit" Nullable="false" />
+          <Property Name="Registrado" Type="datetime" />
+          <Property Name="VistoEm" Type="datetime" />
         </EntityType>
         <EntityType Name="Restaurante">
           <Key>
@@ -40,17 +44,18 @@
           <Property Name="Bairro" Type="varchar" MaxLength="100" />
           <Property Name="Link" Type="varchar" MaxLength="100" />
           <Property Name="Localizacao" Type="varchar" MaxLength="100" />
-          <Property Name="Nota" Type="int" />
-          <Property Name="Visto1" Type="bit" />
-          <Property Name="Visto2" Type="bit" />
+          <Property Name="Nota" Type="int" Nullable="false" />
+          <Property Name="Visto1" Type="bit" Nullable="false" />
+          <Property Name="Visto2" Type="bit" Nullable="false" />
+          <Property Name="Registrado" Type="datetime" />
+          <Property Name="VistoEm" Type="datetime" />
         </EntityType>
         <EntityContainer Name="dbModelStoreContainer">
           <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Media" EntityType="Self.Media" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Restaurante" EntityType="Self.Restaurante" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -64,9 +69,11 @@
           <Property Name="Fim" Type="DateTime" Precision="3" />
           <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Localizacao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Nota" Type="Int32" />
-          <Property Name="Visto1" Type="Boolean" />
-          <Property Name="Visto2" Type="Boolean" />
+          <Property Name="Nota" Type="Int32" Nullable="false" />
+          <Property Name="Visto1" Type="Boolean" Nullable="false" />
+          <Property Name="Visto2" Type="Boolean" Nullable="false" />
+          <Property Name="Registrado" Type="DateTime" Precision="3" />
+          <Property Name="VistoEm" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Media">
           <Key>
@@ -75,9 +82,11 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Nota" Type="Int32" />
-          <Property Name="Visto1" Type="Boolean" />
-          <Property Name="Visto2" Type="Boolean" />
+          <Property Name="Nota" Type="Int32" Nullable="false" />
+          <Property Name="Visto1" Type="Boolean" Nullable="false" />
+          <Property Name="Visto2" Type="Boolean" Nullable="false" />
+          <Property Name="Registrado" Type="DateTime" Precision="3" />
+          <Property Name="VistoEm" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Restaurante">
           <Key>
@@ -89,9 +98,11 @@
           <Property Name="Bairro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Localizacao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Nota" Type="Int32" />
-          <Property Name="Visto1" Type="Boolean" />
-          <Property Name="Visto2" Type="Boolean" />
+          <Property Name="Nota" Type="Int32" Nullable="false" />
+          <Property Name="Visto1" Type="Boolean" Nullable="false" />
+          <Property Name="Visto2" Type="Boolean" Nullable="false" />
+          <Property Name="Registrado" Type="DateTime" Precision="3" />
+          <Property Name="VistoEm" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityContainer Name="micadb2Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Eventoes" EntityType="Self.Evento" />
@@ -107,6 +118,8 @@
           <EntitySetMapping Name="Eventoes">
             <EntityTypeMapping TypeName="dbModel.Evento">
               <MappingFragment StoreEntitySet="Evento">
+                <ScalarProperty Name="VistoEm" ColumnName="VistoEm" />
+                <ScalarProperty Name="Registrado" ColumnName="Registrado" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Inicio" ColumnName="Inicio" />
@@ -122,6 +135,8 @@
           <EntitySetMapping Name="Media1">
             <EntityTypeMapping TypeName="dbModel.Media">
               <MappingFragment StoreEntitySet="Media">
+                <ScalarProperty Name="VistoEm" ColumnName="VistoEm" />
+                <ScalarProperty Name="Registrado" ColumnName="Registrado" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
@@ -134,6 +149,8 @@
           <EntitySetMapping Name="Restaurantes">
             <EntityTypeMapping TypeName="dbModel.Restaurante">
               <MappingFragment StoreEntitySet="Restaurante">
+                <ScalarProperty Name="VistoEm" ColumnName="VistoEm" />
+                <ScalarProperty Name="Registrado" ColumnName="Registrado" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Cozinha" ColumnName="Cozinha" />

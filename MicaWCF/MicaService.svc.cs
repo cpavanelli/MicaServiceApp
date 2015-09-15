@@ -28,7 +28,10 @@ namespace MicaWCF
             try
             {
                 if (restaurante.ID == 0)
+                {
+                    restaurante.Registrado = DateTime.Now;
                     db.Restaurantes.Add(restaurante);
+                }
                 else
                     db.Entry(restaurante).State = EntityState.Modified;
 

@@ -17,8 +17,10 @@ namespace MicaWCF
         public int ID { get; set; }
         public string Nome { get; set; }
         public string Tipo { get; set; }
-        public Nullable<int> Nota { get; set; }
-        public Nullable<bool> Visto1 { get; set; }
-        public Nullable<bool> Visto2 { get; set; }
+        public int Nota { get; set; }
+        public bool Visto1 { get; set; }
+        public bool Visto2 { get; set; }
+        public Nullable<System.DateTime> Registrado { get; set; }
+        public Nullable<System.DateTime> VistoEm { get; set; }
     }
 }

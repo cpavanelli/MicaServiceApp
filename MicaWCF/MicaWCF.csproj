@@ -129,6 +129,8 @@
       <DependentUpon>dbEDMX.edmx</DependentUpon>
     </Content>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\micaApp.pubxml" />
+    <None Include="Properties\PublishProfiles\micaWCF.pubxml" />
     <None Include="Properties\PublishProfiles\TesteApp2.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
