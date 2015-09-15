@@ -20,6 +20,7 @@ namespace MicaWCF
 
         public Restaurante[] GetRestaurantes()
         {
+
             return db.Restaurantes.ToArray();
         }
 
