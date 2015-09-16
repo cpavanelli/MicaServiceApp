@@ -83,6 +83,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DashItem.cs" />
     <Compile Include="dbEDMX.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

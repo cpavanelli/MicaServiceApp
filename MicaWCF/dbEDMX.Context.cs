@@ -25,8 +25,8 @@ namespace MicaWCF
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Evento> Eventoes { get; set; }
-        public virtual DbSet<Media> Media1 { get; set; }
+        public virtual DbSet<Evento> Eventos { get; set; }
+        public virtual DbSet<Media> Medias { get; set; }
         public virtual DbSet<Restaurante> Restaurantes { get; set; }
     }
 }
