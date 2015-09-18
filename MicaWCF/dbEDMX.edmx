@@ -20,6 +20,7 @@
           <Property Name="Visto2" Type="bit" Nullable="false" />
           <Property Name="Registrado" Type="datetime" />
           <Property Name="VistoEm" Type="datetime" />
+          <Property Name="Detalhes" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Media">
           <Key>
@@ -33,6 +34,7 @@
           <Property Name="Visto2" Type="bit" Nullable="false" />
           <Property Name="Registrado" Type="datetime" />
           <Property Name="VistoEm" Type="datetime" />
+          <Property Name="Detalhes" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Restaurante">
           <Key>
@@ -49,6 +51,7 @@
           <Property Name="Visto2" Type="bit" Nullable="false" />
           <Property Name="Registrado" Type="datetime" />
           <Property Name="VistoEm" Type="datetime" />
+          <Property Name="Detalhes" Type="varchar(max)" />
         </EntityType>
         <EntityContainer Name="dbModelStoreContainer">
           <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
@@ -74,6 +77,7 @@
           <Property Name="Visto2" Type="Boolean" Nullable="false" />
           <Property Name="Registrado" Type="DateTime" Precision="3" />
           <Property Name="VistoEm" Type="DateTime" Precision="3" />
+          <Property Name="Detalhes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Media">
           <Key>
@@ -87,6 +91,7 @@
           <Property Name="Visto2" Type="Boolean" Nullable="false" />
           <Property Name="Registrado" Type="DateTime" Precision="3" />
           <Property Name="VistoEm" Type="DateTime" Precision="3" />
+          <Property Name="Detalhes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Restaurante">
           <Key>
@@ -103,10 +108,11 @@
           <Property Name="Visto2" Type="Boolean" Nullable="false" />
           <Property Name="Registrado" Type="DateTime" Precision="3" />
           <Property Name="VistoEm" Type="DateTime" Precision="3" />
+          <Property Name="Detalhes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="micadb2Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Eventoes" EntityType="Self.Evento" />
-          <EntitySet Name="Media1" EntityType="dbModel.Media" />
+          <EntitySet Name="Eventos" EntityType="Self.Evento" />
+          <EntitySet Name="Medias" EntityType="dbModel.Media" />
           <EntitySet Name="Restaurantes" EntityType="Self.Restaurante" />
         </EntityContainer>
       </Schema>
@@ -115,9 +121,10 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="dbModelStoreContainer" CdmEntityContainer="micadb2Entities">
-          <EntitySetMapping Name="Eventoes">
+          <EntitySetMapping Name="Eventos">
             <EntityTypeMapping TypeName="dbModel.Evento">
               <MappingFragment StoreEntitySet="Evento">
+                <ScalarProperty Name="Detalhes" ColumnName="Detalhes" />
                 <ScalarProperty Name="VistoEm" ColumnName="VistoEm" />
                 <ScalarProperty Name="Registrado" ColumnName="Registrado" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -132,9 +139,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Media1">
+          <EntitySetMapping Name="Medias">
             <EntityTypeMapping TypeName="dbModel.Media">
               <MappingFragment StoreEntitySet="Media">
+                <ScalarProperty Name="Detalhes" ColumnName="Detalhes" />
                 <ScalarProperty Name="VistoEm" ColumnName="VistoEm" />
                 <ScalarProperty Name="Registrado" ColumnName="Registrado" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -149,6 +157,7 @@
           <EntitySetMapping Name="Restaurantes">
             <EntityTypeMapping TypeName="dbModel.Restaurante">
               <MappingFragment StoreEntitySet="Restaurante">
+                <ScalarProperty Name="Detalhes" ColumnName="Detalhes" />
                 <ScalarProperty Name="VistoEm" ColumnName="VistoEm" />
                 <ScalarProperty Name="Registrado" ColumnName="Registrado" />
                 <ScalarProperty Name="ID" ColumnName="ID" />

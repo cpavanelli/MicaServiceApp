@@ -22,5 +22,6 @@ namespace MicaWCF
         public bool Visto2 { get; set; }
         public Nullable<System.DateTime> Registrado { get; set; }
         public Nullable<System.DateTime> VistoEm { get; set; }
+        public string Detalhes { get; set; }
     }
 }

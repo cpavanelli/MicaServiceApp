@@ -79,7 +79,6 @@
       <LastGenOutput>dbEDMX.cs</LastGenOutput>
     </Content>
     <Content Include="MicaService.svc" />
-    <Content Include="MicaServicef.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -109,10 +108,6 @@
     <Compile Include="MicaService.svc.cs">
       <DependentUpon>MicaService.svc</DependentUpon>
     </Compile>
-    <Compile Include="MicaServicef.svc.cs">
-      <DependentUpon>MicaServicef.svc</DependentUpon>
-    </Compile>
-    <Compile Include="IMicaServicef.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restaurante.cs">
       <DependentUpon>dbEDMX.tt</DependentUpon>

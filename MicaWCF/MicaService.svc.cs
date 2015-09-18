@@ -152,13 +152,13 @@ namespace MicaWCF
             List<DashItem> items = new List<DashItem>();
 
             foreach (var item in db.Restaurantes.OrderByDescending(r => r.Registrado).Take(10))
-                items.Add(new DashItem() { Nome = "Restaurante: " + item.Nome, Registrado = item.Registrado });
+                items.Add(new DashItem() { Nome = "Restaurante: " + item.Nome, Registrado = item.Registrado, IsRestaurante = true, ID = item.ID });
 
             foreach (var item in db.Eventos.OrderByDescending(r => r.Registrado).Take(10))
-                items.Add(new DashItem() { Nome = "Evento: " + item.Nome, Registrado = item.Registrado, Quando = item.Inicio });
+                items.Add(new DashItem() { Nome = "Evento: " + item.Nome, Registrado = item.Registrado, Quando = item.Inicio, IsEvento = true, ID = item.ID });
 
             foreach (var item in db.Medias.OrderByDescending(r => r.Registrado).Take(10))
-                items.Add(new DashItem() { Nome = "Media: " + item.Nome, Registrado = item.Registrado });
+                items.Add(new DashItem() { Nome = "Media: " + item.Nome, Registrado = item.Registrado, ID = item.ID });
 
             return items.OrderByDescending(i => i.Registrado).Take(3).ToArray();
         }
